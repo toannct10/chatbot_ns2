@@ -20,7 +20,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://nextsteps1.vercel.app",
+        "http://localhost:3000",      # để dev local cũng chạy được
+        "*"                           # hoặc dùng * nếu muốn mở hoàn toàn
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
