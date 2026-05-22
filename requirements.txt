@@ -10,3 +10,4 @@ cryptography
 pydantic-settings
 langchain-text-splitters
 pdfplumber
+google-genai

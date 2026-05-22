@@ -31,7 +31,7 @@ def run_etl_pipeline():
         extract_products_to_jsonl(RAW_PRODUCTS) 
         
         # 1.2 Trích xuất từ file PDF (Ví dụ: file chính sách nằm trong /app/data/policies.pdf)
-        pdf_path = os.path.join(DATA_DIR, "chinh_sach_doi_tra.pdf")
+        pdf_path = os.path.join(DATA_DIR, "/app/data/FAQ_CHATBOT.pdf")
         if os.path.exists(pdf_path):
             extract_pdf_to_jsonl(pdf_path, RAW_POLICIES, doc_category="chinh_sach")
         else:
