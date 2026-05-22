@@ -1,0 +1,31 @@
+# render.yaml
+services:
+  - type: web
+    name: nextsteps-chatbot
+    runtime: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt && python ingest.py
+    startCommand: uvicorn chatbot.main:app --host 0.0.0.0 --port $PORT
+
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_LLM_MODEL
+        value: gemini-1.5-flash
+      - key: GEMINI_EMBEDDING_MODEL
+        value: models/text-embedding-004
+      - key: CHROMA_PERSIST_DIR
+        value: /opt/render/project/src/chatbot/vectorstore/chroma_db
+      - key: DOCUMENTS_DIR
+        value: /opt/render/project/src/chatbot/documents
+      - key: CHUNK_SIZE
+        value: "800"
+      - key: CHUNK_OVERLAP
+        value: "150"
+      - key: RETRIEVAL_TOP_K
+        value: "5"
+      - key: RETRIEVAL_SCORE_THRESHOLD
+        value: "0.3"
+      - key: CHATBOT_CORS_ORIGINS
+        value: "https://nextsteps1.vercel.app,http://localhost:3000"

@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+google-generativeai
+qdrant-client
+langchain
+pypdf
+sqlalchemy
+pymysql
+cryptography
+pydantic-settings
+langchain-text-splitters
+pdfplumber
