@@ -17,7 +17,12 @@ genai_client = genai_new.Client(api_key=GEMINI_API_KEY)  # thêm dòng này
 GEMINI_EMBEDDING_MODEL = "gemini-embedding-001"
 GEMINI_CHAT_MODEL = "gemini-2.0-flash"
  
-qdrant = QdrantClient(url=QDRANT_URL)
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+
+qdrant = QdrantClient(
+    url=QDRANT_URL,
+    api_key=QDRANT_API_KEY
+)
 COLLECTION_NAME = "ecommerce_products"
  
 def retrieve_context(query: str, service_type: str = None, top_k: int = 4) -> str:
