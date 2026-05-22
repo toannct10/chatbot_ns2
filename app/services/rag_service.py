@@ -15,7 +15,7 @@ QDRANT_URL = os.getenv("QDRANT_URL", "http://qdrant_db:6333")
 genai.configure(api_key=GEMINI_API_KEY)
 genai_client = genai_new.Client(api_key=GEMINI_API_KEY)  # thêm dòng này
 GEMINI_EMBEDDING_MODEL = "gemini-embedding-001"
-GEMINI_CHAT_MODEL = "gemini-1.5-flash"
+GEMINI_CHAT_MODEL = "gemini-2.0-flash"
  
 qdrant = QdrantClient(url=QDRANT_URL)
 COLLECTION_NAME = "ecommerce_products"
