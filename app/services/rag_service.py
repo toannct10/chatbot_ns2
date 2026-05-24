@@ -68,7 +68,7 @@ COLLECTION_NAME = "ecommerce_products"
 def retrieve_context(
     query: str,
     service_type: str = None,
-    top_k: int = 4
+    top_k: int = 2
 ) -> str:
 
     try:
